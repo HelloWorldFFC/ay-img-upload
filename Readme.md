@@ -70,7 +70,8 @@ import imgUpload from '@/components/ay-img-upload/ay-img-upload.vue';
 ```
 
 ## 参考插件
-[图片资源](https://ext.dcloud.net.cn/plugin?id=2922)
+[参考插件](https://ext.dcloud.net.cn/plugin?id=2922)
+[参考插件](https://ext.dcloud.net.cn/plugin?id=594)
 
 
  

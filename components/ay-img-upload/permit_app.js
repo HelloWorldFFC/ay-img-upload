@@ -371,11 +371,13 @@ const go_AppSetting = (settingTips) => {
 const p_ID_ios = {
 	location: 'location', //位置权限
 	camera: 'camera', //摄像头权限
+	call_phone :'',//拨打电话权限,ios勿需授权
 }
 
 const p_ID_anrd = {
 	location: 'android.permission.ACCESS_FINE_LOCATION', //位置权限
 	camera: 'android.permission.CAMERA', //摄像头权限
+	call_phone :'android.permission.CALL_PHONE',//拨打电话权限
 
 }
 
@@ -423,9 +425,14 @@ function req_Permit_any(isAndroid, p_ID_anrd, p_ID_ios, settingTips) {
 
 		} else {
 			let iscan = false;
-			iscan = judgeIosPermission(p_ID_ios);
-			if (!iscan) {
-				go_AppSetting(settingTips)
+			
+			if(p_ID_ios.length>0){
+				iscan = judgeIosPermission(p_ID_ios);
+				if (!iscan) {
+					go_AppSetting(settingTips)
+				}
+			}else{
+				iscan = true ;
 			}
 			resolve(iscan);
 		}
